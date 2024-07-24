@@ -1,0 +1,41 @@
+---
+title: Welcome to XRM.DEV
+description: Power Apps and Dataverse development when skill is not an issue
+template: splash
+hero:
+  tagline: Power Apps and Dataverse development when skill is not an issue
+  image:
+    alt: A glittering, brightly colored logo
+    dark: ../../assets/darkxrmdev.png
+    light: ../../assets/lightxrmdev.png
+  actions:
+    - text: Start learning
+      link: /knowledge/overview/
+      icon: right-arrow
+      variant: primary
+    - text: Read the mission
+      link: /about/project/
+      icon: right-caret
+---
+
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+## Jump directly to what you need
+
+<CardGrid>
+	<LinkCard title="Data Model" href="/knowledge/datamodel/overview" 
+	description="The foundation of any business system is a great data model"
+	/>
+	<LinkCard title="Business Logic" href="/knowledge/businesslogic/overview" 
+	description="How to structure business logic and where to put it"
+	/>
+	<LinkCard title="Integrations" href="/knowledge/integrations/overview" 
+	description="A lonely system rarely adds value"
+	/>
+	<LinkCard title="User Experience" href="/knowledge/ux/overview" 
+	description="Design the best user experience"
+	/>
+	<LinkCard title="Tools" href="/knowledge/tools/overview" 
+	description="Productivity tools that will make you faster"
+	/>
+</CardGrid>
