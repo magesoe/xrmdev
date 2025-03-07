@@ -8,6 +8,22 @@ import {
   FileCode, 
   RefreshCw 
 } from 'lucide-react';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+// Customize the oneDark theme with a solid black background
+const customOneDark = {
+  ...oneDark,
+  'pre[class*="language-"]': {
+    ...oneDark['pre[class*="language-"]'],
+    background: 'var(--tw-prose-pre-code);',
+  },
+  'code[class*="language-"]': {
+      ...oneDark['code[class*="language-"]'],
+      background: 'var(--tw-prose-pre-code);',
+    },
+};
+
 
 const codeExamples = [
   {
@@ -19,6 +35,7 @@ const codeExamples = [
       'Tight compile-time coupling of queue names and messages through shared types',
       'Enable idempotent patterns with custom apis'
     ],
+    language: 'csharp',
     code: `// Shared types for Azure and Dataverse
 public record CreateInvoicesMessage(DateTime End, Guid InvoiceCollectionId);
     
@@ -44,6 +61,7 @@ public Task Run([QueueTrigger(QueueNames.CreateInvoicesQueue)] CreateInvoicesMes
       'Clean architecture principles',
       'Separation of concerns'
     ],
+    language: 'csharp',
     code: `// Plugin using dependency injection
 public class TransactionService : ITransactionService
 {
@@ -83,7 +101,9 @@ public class TransactionService : ITransactionService
       'Integrated testing of cross-service flows',
       'Fast feedback loop for development'
     ],
+    language: 'csharp',
     code: `// Integration test with local Dataverse and Azure emulation
+    
 // Create an invoice collection using the producer with default values
 var invoiceCollection = Producer.ProduceValidInvoiceCollection(null);
 
@@ -111,6 +131,7 @@ retrievedInvoiceCollection.statuscode
       'Automated web resource deployment',
       'Version-controlled configuration'
     ],
+    language: 'csharp',
     code: `// Plugin Registration
 public class InvoiceCollectionStatusChange : Plugin
 {
@@ -152,14 +173,13 @@ public class CreateTransactions : CustomAPI
       'Intellisense for Dataverse web resources',
       'Type safe queries and operations'
     ],
+    language: 'typescript',
     code: `// Form specific types
-namespace subscription {
-  let formContext: Form.mgs_subscription.Main.Information;
+let formContext: Form.mgs_subscription.Main.Information;
 
-  export function onLoad(context: Xrm.ExecutionContext<any, any>) {
-    formContext = context.getFormContext() as Form.mgs_subscription.Main.Information;
-    ...
-  }
+export function onLoad(context: Xrm.ExecutionContext<any, any>) {
+  formContext = context.getFormContext() as Form.mgs_subscription.Main.Information;
+  ...
 }
   
 // Typesafe queries
@@ -282,13 +302,16 @@ const Benefits: React.FC = () => {
                 <div className="code-dot bg-red-500"></div>
                 <div className="code-dot bg-yellow-500"></div>
                 <div className="code-dot bg-green-500"></div>
-                <span className="ml-2 text-sm text-slate-300">Example.cs</span>
+                <span className="ml-2 text-sm text-slate-300">{codeExamples[selectedExample].title}.cs</span>
               </div>
               <div className="code-content">
                 <pre className="overflow-x-auto">
-                  <code className="text-sm font-mono text-slate-300 whitespace-pre">
+                  <SyntaxHighlighter
+                    style={customOneDark}
+                    language={codeExamples[selectedExample].language}
+                  >
                     {codeExamples[selectedExample].code}
-                  </code>
+                  </SyntaxHighlighter>
                 </pre>
               </div>
             </motion.div>

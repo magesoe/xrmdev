@@ -72,7 +72,7 @@ const Comparison: React.FC = () => {
             <span className="gradient-text">XrmBedrock</span> vs Standard Tooling
           </h2>
           <p className="text-xl text-slate-300">
-            See how XrmBedrock compares to Microsoft's standard Dataverse development tools.
+            See how XrmBedrock compares to Microsoft's standard Dataverse development experience.
           </p>
         </motion.div>
 
@@ -87,7 +87,7 @@ const Comparison: React.FC = () => {
                   XrmBedrock
                 </th>
                 <th scope="col" className="px-6 py-4 text-center text-sm font-semibold text-white">
-                  Standard Microsoft Tools
+                  Standard Microsoft
                 </th>
               </tr>
             </thead>

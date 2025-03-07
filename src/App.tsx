@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <Helmet>
-        <title>XrmBedrock - Professional Dataverse Development Toolkit</title>
+        <title>XrmBedrock - Professional Dataverse Development Framework</title>
         <meta name="description" content="XrmBedrock provides professional developers with powerful tools and streamlined workflows that go beyond Microsoft's standard offerings for Dataverse development." />
         <meta name="keywords" content="XrmBedrock, Dataverse, Microsoft Dynamics 365, CRM development, Power Platform, Developer tools" />
         <link rel="canonical" href="https://xrmbedrock.com" />
