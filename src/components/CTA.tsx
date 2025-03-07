@@ -10,10 +10,7 @@ const CTA: React.FC = () => {
   });
 
   return (
-    <section className="py-20 relative overflow-hidden">
-      <div className="blob blob-1" style={{ top: '60%', left: '5%' }}></div>
-      <div className="blob blob-3" style={{ top: '20%', right: '10%' }}></div>
-      
+    <section className="py-20 relative overflow-hidden">      
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <motion.div
           ref={ref}
@@ -43,15 +40,6 @@ const CTA: React.FC = () => {
                 >
                   <Github size={18} />
                   <span>Star on GitHub</span>
-                </a>
-                <a 
-                  href="https://github.com/delegateas/XrmBedrock#getting-started" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="gradient-border bg-slate-900 text-white px-8 py-3 rounded-lg font-medium transition-all w-full sm:w-auto justify-center flex items-center gap-2 hover:scale-102"
-                >
-                  <span>Get Started</span>
-                  <ArrowRight size={18} />
                 </a>
               </div>
             </div>

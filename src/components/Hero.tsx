@@ -67,7 +67,7 @@ const Hero: React.FC = () => {
               <Code className="text-primary-400" size={24} />
             </div>
             <h3 className="text-xl font-semibold mb-2">Modern Development</h3>
-            <p className="text-slate-400">Leverage TypeScript, modern tooling, and best practices for Dataverse development.</p>
+            <p className="text-slate-400">Leverage the latest .NET features with Dataverse development.</p>
           </div>
           
           <div className="bg-slate-900/50 backdrop-blur-sm p-6 rounded-xl border border-slate-800">
@@ -82,8 +82,8 @@ const Hero: React.FC = () => {
             <div className="bg-primary-500/20 p-3 rounded-lg w-fit mb-4">
               <Database className="text-primary-400" size={24} />
             </div>
-            <h3 className="text-xl font-semibold mb-2">Data Control</h3>
-            <p className="text-slate-400">Gain complete control over your Dataverse data with advanced querying and manipulation.</p>
+            <h3 className="text-xl font-semibold mb-2">Azure & Dataverse</h3>
+            <p className="text-slate-400">Experience a trivial development experience when working with Azure and Dataverse together.</p>
           </div>
         </motion.div>
       </div>

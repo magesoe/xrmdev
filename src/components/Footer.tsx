@@ -58,22 +58,12 @@ const Footer: React.FC = () => {
             <ul className="space-y-2">
               <li>
                 <a 
-                  href="https://github.com/delegateas/XrmBedrock#documentation" 
+                  href="https://github.com/delegateas" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-slate-400 hover:text-white transition-colors"
                 >
-                  Documentation
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="https://github.com/delegateas/XrmBedrock#getting-started" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-slate-400 hover:text-white transition-colors"
-                >
-                  Getting Started
+                  Other tools
                 </a>
               </li>
               <li>
@@ -84,16 +74,6 @@ const Footer: React.FC = () => {
                   className="text-slate-400 hover:text-white transition-colors"
                 >
                   Issues
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="https://github.com/delegateas/XrmBedrock/releases" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-slate-400 hover:text-white transition-colors"
-                >
-                  Releases
                 </a>
               </li>
             </ul>
