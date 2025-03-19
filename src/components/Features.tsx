@@ -10,7 +10,8 @@ import {
   Zap,
   FileCode,
   RefreshCw,
-  Terminal
+  Terminal,
+  Lock
 } from 'lucide-react';
 
 const features = [
@@ -23,6 +24,11 @@ const features = [
     icon: <Workflow size={24} />,
     title: 'Modern .NET Development',
     description: 'Experience latest .NET Core development patterns while writing .NET Framework plugins through advanced IoC implementation.'
+  },
+  {
+    icon: <Lock size={24} />,
+    title: 'Secure by Design',
+    description: 'Connect Dataverse and Azure services securely using managed identities. No secrets are used in the code or configuration during runtime.',
   },
   {
     icon: <Terminal size={24} />,
@@ -44,6 +50,16 @@ const features = [
     title: 'Advanced Development',
     description: 'Develop plugins, custom apis and webresources with modern patterns, enriched types, and robust testing.'
   },
+  {
+    icon: <FileCode size={24} />,
+    title: 'TypeScript first',
+    description: 'Write front-end code with confidence using TypeScript, with full type safety and intellisense.'
+  },
+  {
+    icon: <Zap size={24} />,
+    title: 'Test data templating',
+    description: 'Loosely couple test data with test cases using data templates, ensuring data consistency and test isolation.'
+  }
 ];
 
 const FeatureCard: React.FC<{

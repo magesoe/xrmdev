@@ -29,26 +29,29 @@ const codeExamples = [
   {
     title: 'Azure Integration',
     icon: <Cloud size={20} />,
-    description: 'XrmBedrock provides strong typing and compile-time checks between Azure Functions and Dataverse, ensuring type safety while maintaining loose runtime coupling. This means you catch errors early in development rather than in production.',
+    description: 'XrmBedrock provides strong typing and compile-time checks between Azure Functions and Dataverse, ensuring type safety while maintaining loose runtime coupling. This means you catch errors early in development rather than in production. Managed identities are used for secure communication between services, to ensure security by design.',
     benefits: [
       'Low runtime coupling between services through queues',
       'Tight compile-time coupling of queue names and messages through shared types',
-      'Enable idempotent patterns with custom apis'
+      'Secure by design using managed identities'
     ],
     language: 'csharp',
     code: `// Shared types for Azure and Dataverse
 public record CreateInvoicesMessage(DateTime End, Guid InvoiceCollectionId);
-    
 public static class QueueNames
 {
   public const string CreateInvoicesQueue = "createinvoicesqueue";
 }
 
-// Send message to Azure queue from Plugin
+// Decouples business logic from sending logic
 azureService.SendCreateInvoicesMessage(
   new SharedDomain.EconomyArea.CreateInvoicesMessage(target.mgs_InvoiceUntil.Value, target.Id));
 
-// Receive message from Azure queue in Azure Function
+// Uses managed identity to authenticate with Azure
+var token = managedIdentityService.AcquireToken(
+  new string[] { "https://storage.azure.com/.default" });
+
+// Receive message from Azure queue in Azure Function. Tight coupling at compile time.
 [Function(nameof(CreateInvoices))]
 public Task Run([QueueTrigger(QueueNames.CreateInvoicesQueue)] CreateInvoicesMessage message)`
   },
